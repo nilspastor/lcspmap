@@ -1,20 +1,26 @@
 <?php
 
+
+// Classe en PHP Objet qui représente le personnage et ses caractéristiques
 class Personnage {
-	
+
+	// Déclaration privée des attributs (ils ne sont pas accessibles directement)	
 	private $_charHp;
 	private $_charId;
 	private $_charName;
 	private $_charKo;
 
+	// Déclaration des constantes de la classe Personnage
 	const CEST_MOI = 1;
 	const PERSONNAGE_KO = 2;
 	const PERSONNAGE_FRAPPE = 3;
 
+	// Méthode d'hydratation de l'objet Personnage passée dans le constructeur
 	public function __construct(array $donnees) {
 		$this->hydrate($donnees);
 	}
 
+	// Méthode pour frapper un personnage, si c'est moi return constante CEST_MOI
 	public function frapper(Personnage $perso) {
 		if ($perso->charId() == $this->_charId) {
 			return self::CEST_MOI;
@@ -22,6 +28,7 @@ class Personnage {
 		return $perso->recevoirDegats();
 	}
 
+	// Méthode d'hydratation
 	public function hydrate(array $donnees) {
 		foreach ($donnees as $key => $value) {
 			$method = 'set'.ucfirst($key);
@@ -31,6 +38,7 @@ class Personnage {
 		}
 	}
 
+	// Méthode recevoirDegats, si les PdV du personnage frappé tombe en dessous de zéro retourne la constante PERSO_KO
 	public function recevoirDegats() {
 		$this->_charHp -= 5;
 		if ($this->_charHp <= 0) {
