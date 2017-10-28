@@ -4,7 +4,7 @@
 // Classe en PHP Objet qui représente le personnage et ses caractéristiques
 class Personnage {
 
-	// Déclaration privée des attributs (ils ne sont pas accessibles directement)	
+	// Déclaration privée des attributs (ils ne sont pas accessibles directement mais via les Getters/Setters)	
 	private $_charHp;
 	private $_charId;
 	private $_charName;
