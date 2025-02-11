@@ -1,4 +1,4 @@
-# personnagemanager
+# LCSP Map
 Script PHP/SQL d'un mini RPG
 
 # Projet
