@@ -1,4 +1,4 @@
-# LCSP Map
+# LCSP - Mini-RPG
 Script PHP/SQL d'un mini RPG
 
 # Projet
